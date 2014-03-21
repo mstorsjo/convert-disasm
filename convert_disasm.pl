@@ -32,8 +32,8 @@ print "\tTHUMB\n";
 print "\tAREA |.text|, CODE, READONLY, ALIGN=2, CODEALIGN\n";
 print "\tALIGN 4\n";
 foreach my $func (@functions) {
-	print "\tEXPORT |$func|\n";
-	print "|$func| PROC\n";
+	print "\tEXPORT $func\n";
+	print "$func PROC\n";
 	foreach my $tuple (@{$function_content{$func}}) {
 		my $addr = @{$tuple}[0];
 		my $instr = @{$tuple}[1];
