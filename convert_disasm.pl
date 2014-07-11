@@ -19,6 +19,7 @@ while (<STDIN>) {
 		my $instr = $3;
 		$instr =~ s/;.*//;
 		$instr =~ s/^([^\s]+)\.n(\s+)/$1$2/;
+		$instr =~ s/\s+$//;
 		my $temp_label = "temp_label_$temp_label_next";
 		if ($instr =~ s/([0-9a-f]+)\s+<[\w\+]+>$/$temp_label/) {
 			push(@{$temp_labels{$1}}, $temp_label);
